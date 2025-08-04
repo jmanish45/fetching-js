@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+</head>
+<body>
+    <h2>Rock-Paper-Scissor</h2>
+
+    <!-- Rock Button -->
+    <button onclick="
+        let rno = Math.random();
+        let computermove = '';
+        if (rno < 0.33) {
+            computermove = 'rock';
+        } else if (rno < 0.66) {
+            computermove = 'paper';
+        } else {
+            computermove = 'scissor';
+        }
+
+        let result = '';
+        let playermove = 'rock';
+
+        if (computermove === playermove) {
+            result = 'Tie';
+        } else if (
+            (playermove === 'rock' && computermove === 'scissor') ||
+            (playermove === 'paper' && computermove === 'rock') ||
+            (playermove === 'scissor' && computermove === 'paper')
+        ) {
+            result = 'You win';
+        } else {
+            result = 'You lose';
+        }
+
+        alert(`Computer chose ${computermove}. ${result}`);
+    ">Rock</button>
+
+    <!-- Paper Button -->
+    <button onclick="
+        let rno = Math.random();
+        let computermove = '';
+        if (rno < 0.33) {
+            computermove = 'rock';
+        } else if (rno < 0.66) {
+            computermove = 'paper';
+        } else {
+            computermove = 'scissor';
+        }
+
+        let result = '';
+        let playermove = 'paper';
+
+        if (computermove === playermove) {
+            result = 'Tie';
+        } else if (
+            (playermove === 'rock' && computermove === 'scissor') ||
+            (playermove === 'paper' && computermove === 'rock') ||
+            (playermove === 'scissor' && computermove === 'paper')
+        ) {
+            result = 'You win';
+        } else {
+            result = 'You lose';
+        }
+
+        alert(`Computer chose ${computermove}. ${result}`);
+    ">Paper</button>
+
+    <!-- Scissor Button -->
+    <button onclick="
+        let rno = Math.random();
+        let computermove = '';
+        if (rno < 0.33) {
+            computermove = 'rock';
+        } else if (rno < 0.66) {
+            computermove = 'paper';
+        } else {
+            computermove = 'scissor';
+        }
+
+        let result = '';
+        let playermove = 'scissor';
+
+        if (computermove === playermove) {
+            result = 'Tie';
+        } else if (
+            (playermove === 'rock' && computermove === 'scissor') ||
+            (playermove === 'paper' && computermove === 'rock') ||
+            (playermove === 'scissor' && computermove === 'paper')
+        ) {
+            result = 'You win';
+        } else {
+            result = 'You lose';
+        }
+
+        alert(`Computer chose ${computermove}. ${result}`);
+    ">Scissor</button>
+
+</body>
+</html>
