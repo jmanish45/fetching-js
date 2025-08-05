@@ -7,95 +7,65 @@
 </head>
 <body>
     <h2>Rock-Paper-Scissor</h2>
-
-    <!-- Rock Button -->
     <button onclick="
-        let rno = Math.random();
-        let computermove = '';
-        if (rno < 0.33) {
-            computermove = 'rock';
-        } else if (rno < 0.66) {
-            computermove = 'paper';
+        const rno = Math.random();
+        let commputerchoice = '';
+        if(rno >= 0 && rno <0.33) {
+            commputerchoice = 'Rock';
+        } else if(rno >= 0.33 && rno < 0.66) {
+            commputerchoice = 'Paper';
         } else {
-            computermove = 'scissor';
+            commputerchoice = 'Scissor';
         }
-
-        let result = '';
-        let playermove = 'rock';
-
-        if (computermove === playermove) {
-            result = 'Tie';
-        } else if (
-            (playermove === 'rock' && computermove === 'scissor') ||
-            (playermove === 'paper' && computermove === 'rock') ||
-            (playermove === 'scissor' && computermove === 'paper')
-        ) {
-            result = 'You win';
+        console.log('Computer choice:', commputerchoice);
+        if(commputerchoice === 'Rock') {
+            alert('You chose Rock. Computer chose Rock. It\'s a tie!');
+        } else if(commputerchoice === 'Paper') {
+            alert('You chose Rock. Computer chose Paper. You lose!');
         } else {
-            result = 'You lose';
-        }
-
-        alert(`Computer chose ${computermove}. ${result}`);
+            alert('You chose Rock. Computer chose Scissor. You win!');
+        } 
     ">Rock</button>
 
-    <!-- Paper Button -->
     <button onclick="
-        let rno = Math.random();
-        let computermove = '';
-        if (rno < 0.33) {
-            computermove = 'rock';
-        } else if (rno < 0.66) {
-            computermove = 'paper';
+    const rno2 = Math.random();
+        let commputerchoice2 = '';
+        if(rno2 >= 0 && rno2 <0.33) {
+            commputerchoice2 = 'Rock';
+        } else if(rno2 >= 0.33 && rno2 < 0.66) {
+            commputerchoice2 = 'Paper';
         } else {
-            computermove = 'scissor';
+            commputerchoice = 'Scissor';
         }
-
-        let result = '';
-        let playermove = 'paper';
-
-        if (computermove === playermove) {
-            result = 'Tie';
-        } else if (
-            (playermove === 'rock' && computermove === 'scissor') ||
-            (playermove === 'paper' && computermove === 'rock') ||
-            (playermove === 'scissor' && computermove === 'paper')
-        ) {
-            result = 'You win';
+        console.log('Computer choice:', commputerchoice2);
+        if(commputerchoice2 === 'Rock') {
+            alert('You chose Paper. Computer chose Rock. You win!');
+        } else if(commputerchoice2 === 'Paper') {
+            alert('You chose Paper. Computer chose Paper. It\'s a tie!');
         } else {
-            result = 'You lose';
+            alert('You chose Paper. Computer chose Scissor. You lose!');
         }
-
-        alert(`Computer chose ${computermove}. ${result}`);
+    
     ">Paper</button>
 
-    <!-- Scissor Button -->
     <button onclick="
-        let rno = Math.random();
-        let computermove = '';
-        if (rno < 0.33) {
-            computermove = 'rock';
-        } else if (rno < 0.66) {
-            computermove = 'paper';
+    const rno1 = Math.random();
+        let commputerchoice1 = '';
+        if(rno1 >= 0 && rno1 <0.33) {
+            commputerchoice1 = 'Rock';
+        } else if(rno1 >= 0.33 && rno1 < 0.66) {
+            commputerchoice1 = 'Paper';
         } else {
-            computermove = 'scissor';
+            commputerchoice = 'Scissor';
         }
-
-        let result = '';
-        let playermove = 'scissor';
-
-        if (computermove === playermove) {
-            result = 'Tie';
-        } else if (
-            (playermove === 'rock' && computermove === 'scissor') ||
-            (playermove === 'paper' && computermove === 'rock') ||
-            (playermove === 'scissor' && computermove === 'paper')
-        ) {
-            result = 'You win';
+        console.log('Computer choice:', commputerchoice1);
+        if(commputerchoice1 === 'Rock') {
+            alert('You chose Scissor. Computer chose Rock. You lose!');
+        } else if(commputerchoice1 === 'Paper') {
+            alert('You chose Scissor. Computer chose Paper. You win!');
         } else {
-            result = 'You lose';
+            alert('You chose Scissor. Computer chose Scissor. It\'s a tie!');
         }
-
-        alert(`Computer chose ${computermove}. ${result}`);
     ">Scissor</button>
 
 </body>
