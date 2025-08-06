@@ -8,19 +8,11 @@
 <body>
     <h2>Rock-Paper-Scissor</h2>
     <button onclick="
-        const rno = Math.random();
-        let commputerchoice = '';
-        if(rno >= 0 && rno <0.33) {
-            commputerchoice = 'Rock';
-        } else if(rno >= 0.33 && rno < 0.66) {
-            commputerchoice = 'Paper';
-        } else {
-            commputerchoice = 'Scissor';
-        }
-        console.log('Computer choice:', commputerchoice);
-        if(commputerchoice === 'Rock') {
+        pickcompmove();
+        console.log('Computer choice:', computerchoice);
+        if(computerchoice === 'Rock') {
             alert('You chose Rock. Computer chose Rock. It\'s a tie!');
-        } else if(commputerchoice === 'Paper') {
+        } else if(computerchoice === 'Paper') {
             alert('You chose Rock. Computer chose Paper. You lose!');
         } else {
             alert('You chose Rock. Computer chose Scissor. You win!');
@@ -28,19 +20,11 @@
     ">Rock</button>
 
     <button onclick="
-    const rno2 = Math.random();
-        let commputerchoice2 = '';
-        if(rno2 >= 0 && rno2 <0.33) {
-            commputerchoice2 = 'Rock';
-        } else if(rno2 >= 0.33 && rno2 < 0.66) {
-            commputerchoice2 = 'Paper';
-        } else {
-            commputerchoice = 'Scissor';
-        }
-        console.log('Computer choice:', commputerchoice2);
-        if(commputerchoice2 === 'Rock') {
+        pickcompmove();
+        console.log('Computer choice:', computerchoice);
+        if(computerchoice === 'Rock') {
             alert('You chose Paper. Computer chose Rock. You win!');
-        } else if(commputerchoice2 === 'Paper') {
+        } else if(computerchoice === 'Paper') {
             alert('You chose Paper. Computer chose Paper. It\'s a tie!');
         } else {
             alert('You chose Paper. Computer chose Scissor. You lose!');
@@ -49,24 +33,31 @@
     ">Paper</button>
 
     <button onclick="
-    const rno1 = Math.random();
-        let commputerchoice1 = '';
-        if(rno1 >= 0 && rno1 <0.33) {
-            commputerchoice1 = 'Rock';
-        } else if(rno1 >= 0.33 && rno1 < 0.66) {
-            commputerchoice1 = 'Paper';
-        } else {
-            commputerchoice = 'Scissor';
-        }
-        console.log('Computer choice:', commputerchoice1);
-        if(commputerchoice1 === 'Rock') {
+        pickcompmove();
+        console.log('Computer choice:', computerchoice);
+        if(computerchoice === 'Rock') {
             alert('You chose Scissor. Computer chose Rock. You lose!');
-        } else if(commputerchoice1 === 'Paper') {
+        } else if(computerchoice === 'Paper') {
             alert('You chose Scissor. Computer chose Paper. You win!');
         } else {
             alert('You chose Scissor. Computer chose Scissor. It\'s a tie!');
         }
     ">Scissor</button>
+    <script>
+        
+        function pickcompmove () {
+            const rno1 = Math.random();
+        let computerchoice = '';
+        if(rno1 >= 0 && rno1 <0.33) {
+            computerchoice = 'Rock';
+        } else if(rno1 >= 0.33 && rno1 < 0.66) {
+            computerchoice = 'Paper';
+        } else {
+            computerchoice = 'Scissor';
+        }
+        return computerchoice;
+        }
+    </script>
 
 </body>
 </html>
