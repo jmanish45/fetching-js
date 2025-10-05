@@ -21,12 +21,12 @@ let winpattern = [
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         
-        if(turn==="playx") {
-            turn = "playo";
-            box.innerText = "X";   
+        if(turn==="playX") {
+            turn = "playO";
+            box.innerText = "X";
         }
         else {
-            turn = "playx";
+            turn = "playX";
             box.innerText = "O";
         }
         box.disabled = true;
@@ -37,7 +37,7 @@ boxes.forEach((box) => {
 const showWinner = (winner) => {
     msg.innerText = `${winner} is the winner`;
     winmsg.classList.remove("hide");
-    
+   
 }
 const showDraw = (draw) => {
     msg.innerText = `It's a Draw!`;
@@ -45,17 +45,20 @@ const showDraw = (draw) => {
 }
 const checkdraw =  () =>{
     for(let box of boxes) {
-        if(box.innerText === "") {
+        if(box.innerText === "") { 
             return false;
         }
     }
     return true;
 }
 const checkwinner = () => {
-    for(let pattern of winpattern ) {
+    let gameWon = false; 
+    
+    for(let pattern of winpattern) {
         let pos1 = boxes[pattern[0]].innerText;
         let pos2 = boxes[pattern[1]].innerText;
         let pos3 = boxes[pattern[2]].innerText;
+        
         if(pos1 != "" && pos2 != "" && pos3 != "") {
             if(pos1 === pos2 && pos2 === pos3) {
                 boxes[pattern[0]].style.backgroundColor = "lightgreen";
@@ -63,29 +66,28 @@ const checkwinner = () => {
                 boxes[pattern[2]].style.backgroundColor = "lightgreen";
                 boxes.forEach((box) => box.disabled = true);
                 console.log(pos1 + " is the winner");
+                gameWon = true;
                 showWinner(pos1);
+                return; // Exit early when game is won
             }
         }
-        if(checkdraw()) {
-            showDraw();
-            boxes.forEach((box) => box.disabled = true);
-            console.log("It's a Draw");
-            
-        }
-
     }
     
+   
+    if(!gameWon && checkdraw()) {
+        showDraw();
+        boxes.forEach((box) => box.disabled = true);
+        console.log("It's a Draw");
+    }
 }
 
-const resetbut = () => {
+const resetbut = () => { 
     turn = "playX";
     boxes.forEach((box) => {
         box.innerText = "";
         box.disabled = false;
         box.style.backgroundColor = "rgb(230, 196, 151)";
-        winmsg.classList.add("hide");
-
-    })
-
+    });
+    winmsg.classList.add("hide"); 
 }
-resetbtn.addEventListener("click", resetbut); 
+resetbtn.addEventListener("click", resetbut);
