@@ -44,8 +44,9 @@
             </div>
         </div>
     </div>
+    <script src="config.js"></script>
     <script>
-        const apikey = "a99bb0e41d49fe28b3322b977555224f";
+        const apikey = config.apiKey; // Use config instead of hardcoded key
         const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
         const searchBox = document.querySelector(".search input");
         const searchBtn = document.querySelector(".search button");
