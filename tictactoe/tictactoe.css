@@ -26,8 +26,8 @@ body {
 }
 
 .container {
-    margin: 6px;
-    height : 70vh;
+    margin: 2px;
+    height : 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,12 +84,12 @@ body {
     color: white;
     background-color: black;
     cursor: pointer;
-    margin-top: 2vmin;
+    margin-top: 1vmin;
 }
 
 #msg  {
 
-    font-size: 4vmin;
+    font-size: 6vmin;
     color: rgb(230, 237, 29);
 }
 .hide {
