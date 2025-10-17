@@ -14,18 +14,15 @@
                 <img src="images/search.png" width = "30px">
             </button>
         </div>
-        <div class="error">
+
+        <div class="error" style="display: none;">
             <p>Invalid city name</p>
         </div>
+        
         <div class="weather">
-             <!-- i want to use the rain.svg in this to show  image in weather app window so how can i use this svg link here  -->
             <img src="images/rain.svg" class="weather-icon" width="150px" >
-            <h1 class="temp">
-                22°C
-            </h1>
-            <h2 class="city">
-                New York
-            </h2>
+            <h1 class="temp">22°C</h1>
+            <h2 class="city">New York</h2>
             <div class="details">
                 <div class="col">
                     <img src="images/humidity.png" width="90px">
@@ -36,31 +33,35 @@
                 </div>
                 <div class="col">
                     <img src="images/wind.png" width="70px">
-                <div>
-                    <p class="wind">20 kmph</p>
-                    <p>Wind Speed</p>
-                </div>
+                    <div>
+                        <p class="wind">20 kmph</p>
+                        <p>Wind Speed</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="config.js"></script>
     <script>
-        const apikey = config.apiKey; // Use config instead of hardcoded key
+        const apikey = config.apiKey;
         const apiurl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
         const searchBox = document.querySelector(".search input");
         const searchBtn = document.querySelector(".search button");
         const weatherIcon = document.querySelector(".weather-icon");
-        const weather = document.querySelector(".weather");
+
         async function checkweather(city) {
             const response = await fetch(apiurl + city + `&appid=${apikey}`);
+            
             if(response.status == 404) {
                 document.querySelector(".error").style.display = "block";
                 document.querySelector(".weather").style.display = "none";
                 return;
             }
+            
             var data = await response.json();
             console.log(data);
+            
             document.querySelector(".city").innerHTML = data.name;
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
@@ -81,9 +82,9 @@
             else if(data.weather[0].main == "Mist") {
                 weatherIcon.src = "images/snow.svg";
             }
-            weather.style.display = "block";
-            document.querySelector(".error").style.display = "none";
             
+            document.querySelector(".weather").style.display = "block";
+            document.querySelector(".error").style.display = "none";
         }
 
         searchBtn.addEventListener("click", () => {
@@ -96,7 +97,7 @@
             }
         });
 
-        
+        checkweather("London");
     </script>
 </body>
 </html>
