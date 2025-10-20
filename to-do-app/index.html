@@ -5,23 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List App</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <div class="app">
             <h2>
+                <i class="fa-solid fa-clipboard-check"></i>
                 TO-DO List
             </h2>
-            <div class="input_todo">
-                <input type="text" id="input-box" placeholder="Add a new task">
-                <button class="add">Add</button>
-
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-tasks">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="completed-tasks">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="pending-tasks">0</span>
+                    <span class="stat-label">Pending</span>
+                </div>
             </div>
-            <ul id="lists">
-                <!-- <li class="checked">Task 1</li>
-                <li>Task 2</li>
-                <li>Task 3</li> -->
-            </ul>
+
+            <div class="input_todo">
+                <input type="text" id="input-box" placeholder="Add a new task...">
+                <button class="add">
+                    <i class="fa-solid fa-plus"></i> Add
+                </button>
+            </div>
+
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="pending">Pending</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+
+            <ul id="lists"></ul>
+
+            <div class="actions">
+                <button class="clear-completed">
+                    <i class="fa-solid fa-trash"></i> Clear Completed
+                </button>
+                <button class="clear-all">
+                    <i class="fa-solid fa-trash-can"></i> Clear All
+                </button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
